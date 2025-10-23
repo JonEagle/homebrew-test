@@ -13,7 +13,7 @@ class Poseidon < Formula
         output = `pwd`
         output2 = `echo $USERNAME`
         printf output
-        printf output
+        printf output2
           end
 
     def caveats
