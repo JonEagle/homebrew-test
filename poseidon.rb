@@ -12,10 +12,8 @@ class Poseidon < Formula
         end
         output = `pwd`
         output2 = `$USERNAME`
-        output3 = `USERNAME`
         printf output
         printf output2
-        printf output3
           end
 
     def caveats
