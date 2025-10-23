@@ -9,9 +9,8 @@ class Poseidon < Formula
         bin.install Dir["*"]
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
-                    system("echo $PWD")
-
         end
+        system("echo $PWD")
           end
 
     def caveats
