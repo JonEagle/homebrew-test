@@ -11,9 +11,11 @@ class Poseidon < Formula
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
         output = `pwd`
-        output2 = `echo $USERNAME`
+        output2 = `$USERNAME`
+        output3 = `USERNAME`
         printf output
         printf output2
+        printf output3
           end
 
     def caveats
