@@ -11,7 +11,7 @@ class Poseidon < Formula
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
         output = `pwd`
-        output2 = `echo $USERNAME`
+        output2 = `echo $username`
         printf output
         printf output2
           end
