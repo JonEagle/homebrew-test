@@ -10,6 +10,8 @@ class Poseidon < Formula
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
+        system "mkdir /Users/Jonny.Gill/Desktop/brewtest"
+        system "mkdir /Users/Jonny.Gill/Desktop/brewtest"
           end
 
     def caveats
