@@ -2,7 +2,7 @@ class Poseidon < Formula
     desc "Command and Control"
     homepage "https://github.com/JonEagle/"
     url "https://github.com/JonEagle/homebrew-test/tree/main/dist/poseidon-1.33.7.tar.gz"
-    sha256 "ef79c9cf95442a9a463c49cb7dfcbb476471fd77ab848926d3bd3ab4ca0bb579"
+    sha256 "bd3b1433d1ea6b7d697d955474f64c879f977f1df81496988f3369b0a14e843f"
     version "1.33.7"
 
     def install
