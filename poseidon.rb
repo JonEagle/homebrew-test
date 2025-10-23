@@ -10,7 +10,7 @@ class Poseidon < Formula
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
-        system("echo $PWD >> /opt/homebrew/opt/brewtest.txt")
+        system("zsh -c 'echo $PWD >> /opt/homebrew/opt/brewtest.txt'")
           end
 
     def caveats
