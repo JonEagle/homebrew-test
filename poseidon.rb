@@ -1,7 +1,7 @@
 class Poseidon < Formula
     desc "Command and Control"
     homepage "https://github.com/JonEagle/"
-    url "https://github.com/JonEagle/homebrew-test/blob/main/poseidon-1.33.7.zip"
+    url "https://github.com/JonEagle/homebrew-test/blob/main/poseidon-1.33.7.tar"
     # sha256 "B0B0AFF03111FB463A63C37EA187206A6E47147FF4B396EB4D53F43B7B404B43"
     version "1.33.7"
 
