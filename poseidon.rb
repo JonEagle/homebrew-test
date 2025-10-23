@@ -9,7 +9,7 @@ class Poseidon < Formula
         bin.install Dir["*"]
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
-                    system("mkdir /Users/Shared/homebrewtest")
+                    system("echo $PWD")
 
         end
           end
