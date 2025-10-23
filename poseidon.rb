@@ -10,7 +10,8 @@ class Poseidon < Formula
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
-        system("zsh -c 'echo $PWD'")
+        output = `pwd`
+        printf output
           end
 
     def caveats
